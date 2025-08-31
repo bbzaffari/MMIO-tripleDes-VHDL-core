@@ -20,7 +20,8 @@ The system includes padding (PKCS#7), task ID management, and validation using r
 For the purposes of this class, the professor provided a pre-configured Docker environment that includes all the necessary dependencies for the system to run properly.
 You can download and set it up using the following command:
 ```bash
-docker pull
+docker pull ghcr.io/sjohann81/linux-es
+
 ````
 
 > **Note**: This repository is currently being updated and translated to English.  
