@@ -38,10 +38,15 @@ docker pull ghcr.io/sjohann81/linux-es
 docker run -it --name SE -v "$PWD":/root ghcr.io/sjohann81/linux-es
 ```
 
-* `docker run`: Starts a new container from the specified image.
-* `-it`: Allocates an interactive terminal so you can use the command line inside the container.
-* `--name SE`: Names the container `SE`, which helps you reference it easily later.
-* `-v "$PWD":/root`: Mounts your current working directory (from your host machine) into the container at the path `/root ( or /home)`.
+* ***docker run*** **is more than just "starting a container." It’s a compound command** that:
+- 1. Creates a new container from the specified image (ghcr.io/sjohann81/linux-es) — this is like taking a blueprint (image) and building a working instance (container).
+- 2. Allocates resources like filesystem layers, network, and isolated namespaces.
+- 3. Configures the container with options like terminal interaction (-it), naming (--name), volume mounting (-v), and more.
+- 4. Runs the container by executing its default entrypoint (in this case, a shell environment).
+   
+* **`-it`**: Allocates an interactive terminal so you can use the command line inside the container.
+* **`--name SE***`**: Names the container `SE`, which helps you reference it easily later.
+* **`-v "$PWD":/root`**: Mounts your current working directory (from your host machine) into the container at the path `/root ( or /home)`.
 
 > **Note**:
 >
