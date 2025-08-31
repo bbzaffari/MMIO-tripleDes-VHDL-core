@@ -16,13 +16,42 @@ The driver enables encryption and decryption of arbitrary-length messages via sy
 
 The system includes padding (PKCS#7), task ID management, and validation using real text data, ensuring correct operation across the full encryption pipeline.
 
+---
+
+## Clone the repos
+
+---
+
 ## Docker Setup:
 For the purposes of this class, the professor provided a pre-configured Docker environment that includes all the necessary dependencies for the system to run properly.
 You can download and set it up using the following command:
+
+### Docker pull the pre-built image
 ```bash
 docker pull ghcr.io/sjohann81/linux-es
 
 ````
+
+###  Run the Docker container:
+
+```bash
+docker run -it --name SE -v "$PWD":/root ghcr.io/sjohann81/linux-es
+```
+
+* `docker run`: Starts a new container from the specified image.
+* `-it`: Allocates an interactive terminal so you can use the command line inside the container.
+* `--name SE`: Names the container `SE`, which helps you reference it easily later.
+* `-v "$PWD":/root`: Mounts your current working directory (from your host machine) into the container at the path `/root ( or /home)`.
+
+> **Note**:
+>
+> * `$PWD` is an environment variable that returns your current working directory.
+> * That directory **must contain the files you previously cloned** from the project repository.
+> * Inside the container, those files will be accessible at `/root`.
+
+###
+
+---
 
 > **Note**: This repository is currently being updated and translated to English.  
 [![status](https://img.shields.io/badge/files-to%20be%20uploaded-yellow)]()
