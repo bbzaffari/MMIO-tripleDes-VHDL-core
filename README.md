@@ -17,6 +17,25 @@ The driver enables encryption and decryption of arbitrary-length messages via sy
 The system includes padding (PKCS#7), task ID management, and validation using real text data, ensuring correct operation across the full encryption pipeline.
 
 ---
+---
+---
+
+## 🧩 Register Binding and Signal Mapping in VHDL
+
+---
+---
+---
+
+## ⚙ Implementation Details and MMIO Access in the RTOS
+
+
+
+---
+---
+---
+
+# How to Set Up the Environment
+---
 
 ## Clone the repos
 
