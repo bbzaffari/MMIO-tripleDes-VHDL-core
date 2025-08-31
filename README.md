@@ -101,5 +101,5 @@ This command **attaches a terminal to the running container**, allowing you to i
 ---
 ---
 
-> **Note**: This repository is currently being updated and translated to English.  
+> **Note**: This repository is gradually being updated and translated to English.  
 [![status](https://img.shields.io/badge/files-to%20be%20uploaded-yellow)]()
