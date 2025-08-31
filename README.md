@@ -21,18 +21,19 @@ The system includes padding (PKCS#7), task ID management, and validation using r
 ## Clone the repos
 
 ---
+---
 
-## Docker Setup:
+## 1st Docker Setup:
 For the purposes of this class, the professor provided a pre-configured Docker environment that includes all the necessary dependencies for the system to run properly.
 You can download and set it up using the following command:
 
-### Docker pull the pre-built image
+### 1. Docker pull the pre-built image
 ```bash
 docker pull ghcr.io/sjohann81/linux-es
 
 ````
 
-###  Run the Docker container:
+###  2. Run the Docker container:
 
 ```bash
 docker run -it --name SE -v "$PWD":/root ghcr.io/sjohann81/linux-es
@@ -59,8 +60,34 @@ docker run -it --name SE -v "$PWD":/root ghcr.io/sjohann81/linux-es
 >    * That directory **must contain the files you previously cloned** from the project repository.
 >    * Inside the container, those files will be accessible at `/root`.
 
-###
+## 2nd — Starting and accessing the container (after the first run)
 
+Once you've created the container using `docker run`, ***you don't need to recreate it again.***
+Instead, follow these two simple commands to ***reuse*** the container:
+
+#### 1. `docker start SE`
+```bash
+docker start SE
+````
+This command **starts an existing container** that has already been created earlier using `docker run`.
+
+* `SE` is the name you assigned to the container when you first ran it.
+* This command starts the container **in the background** — it doesn’t attach to its terminal.
+
+#### 2. `docker exec -it SE bash`
+```bash
+docker exec -it SE bash
+```
+This command **attaches a terminal to the running container**, allowing you to interact with it just like you would with a regular Linux shell.
+
+* `-it`: Opens an interactive terminal session.
+* `SE`: Refers to the container you started.
+* `bash`: Launches the Bash shell inside the container.
+
+> - Use `start + exec` every time you want to return to the container after rebooting or closing Docker — **never `docker run` again** for this purpose.
+> - Together, these two commands will bring you **back into your development environment** inside the container — ready to compile, run, and edit your project files that were mounted in `/root`.
+
+---
 ---
 
 > **Note**: This repository is currently being updated and translated to English.  
