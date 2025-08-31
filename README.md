@@ -49,13 +49,13 @@ docker run -it --name SE -v "$PWD":/root ghcr.io/sjohann81/linux-es
 * **`-v "$PWD":/root`**: Mounts your current working directory (from your host machine) into the container at the path `/root ( or /home)`.
 
 > **Notes**:
-> - 1. After the first run, do not repeat the docker run command, or you'll create duplicate containers.
+> - ***1. After the first run, do not repeat the docker run command, or you'll create duplicate containers.***
 >    * 1. This can lead to:
 >    * 2. Confusion (multiple containers with similar configurations)
 >    * 3. Conflicts over mounted volumes
 >    * 4. Wasted disk space and dangling containers
 > 
-> * 2. `$PWD` is an environment variable that returns your current working directory.
+> * ***2. `$PWD` is an environment variable that returns your current working directory.***
 >    * That directory **must contain the files you previously cloned** from the project repository.
 >    * Inside the container, those files will be accessible at `/root`.
 
