@@ -16,7 +16,7 @@ The driver enables encryption and decryption of arbitrary-length messages via sy
 
 The system includes padding (PKCS#7), task ID management, and validation using real text data, ensuring correct operation across the full encryption pipeline.
 
-> **Note**: This repository is gradually being updated and translated to English.  
+> **Note**: This repository is gradually being explained and translated to English.  
 [![status](https://img.shields.io/badge/files-to%20be%20uploaded-yellow)]()
 ---
 
