@@ -97,7 +97,7 @@ docker pull ghcr.io/sjohann81/linux-es
 docker run -it --name SE -v "$PWD":/home ghcr.io/sjohann81/linux-es
 ```
 
-* ***docker run*** **is more than just "starting a container." It’s a compound command** that:
+* ***docker run*** **is more than just "starting a container." It’s a compound command that:**
    - 1. Creates a new container from the specified image (ghcr.io/sjohann81/linux-es) — this is like taking a blueprint (image) and building a working instance (container).
    - 2. Allocates resources like filesystem layers, network, and isolated namespaces.
    - 3. Configures the container with options like terminal interaction (-it), naming (--name), volume mounting (-v), and more.
