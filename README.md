@@ -185,7 +185,7 @@ make clean
 cp /home/ucx-os-minimo/build/target/code.txt /home/minimal-HF-RISC-V/software/code.txt
 make ghdl-vcd TIME=10ms
 ````
-Validation EBC:
+**Validation EBC** – *minimal-HF-RISC-V/sim/rv32e_basic/debug.txt*:
 
 ![ECB Mode](docs/ECB.png)
 
@@ -204,7 +204,7 @@ make clean
 cp /home/ucx-os-minimo/build/target/code.txt /home/minimal-HF-RISC-V/software/code.txt
 make ghdl-vcd TIME=10ms
 ````
-Validation CTR:
+**Validation CTR** – *minimal-HF-RISC-V/sim/rv32e_basic/debug.txt*:
 
 ![CTR Mode](docs/CTR.png)
 
@@ -222,7 +222,7 @@ make clean
 cp /home/ucx-os-minimo/build/target/code.txt /home/minimal-HF-RISC-V/software/code.txt
 make ghdl-vcd TIME=10ms
 ````
-Validation CBC:
+**Validation CBC** – *minimal-HF-RISC-V/sim/rv32e_basic/debug.txt*:
 
 ![CBC Mode](docs/CBC.png)
 
