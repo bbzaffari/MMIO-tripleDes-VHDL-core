@@ -29,6 +29,8 @@ Additionally, optimizations were made in the communication with the cryptographi
  * [minimal-HF-RISC-V/riscv/sim/tdes_tb.vhd](https://github.com/bbzaffari/minimal-HF-RISC-V/blob/6a5041a4e47189d85cda550ba80e718dcd1fe7e8/riscv/sim/tdes_tb.vhd) -> *Register Binding and Signal Mapping in VHDL*
  * [minimal-HF-RISC-V/sim/rv32e_basic/debug.txt](https://github.com/bbzaffari/minimal-HF-RISC-V/blob/6a5041a4e47189d85cda550ba80e718dcd1fe7e8/sim/rv32e_basic/debug.txt)
  * [minimal-HF-RISC-V/devices/peripherals/basic_soc.vhd](https://github.com/bbzaffari/minimal-HF-RISC-V/blob/6a5041a4e47189d85cda550ba80e718dcd1fe7e8/devices/peripherals/basic_soc.vhd)
+
+### Validations -> [docs/](docs/)
 > **Note**: This repository is gradually being explained and translated to English.  
 [![status](https://img.shields.io/badge/files-to%20be%20uploaded-yellow)]()
 ---
