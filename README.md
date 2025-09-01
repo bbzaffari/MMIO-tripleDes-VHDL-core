@@ -31,6 +31,10 @@ The system includes padding (PKCS#7), task ID management, and validation using r
 
 ## Clone the repos
 
+```bash
+git clone --recurse https://github.com/bbzaffari/MMIO-tripleDes-VHDL-core
+````
+
 ---
 ---
 
