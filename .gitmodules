@@ -1,0 +1,6 @@
+[submodule "minimal-HF-RISC-V"]
+	path = minimal-HF-RISC-V
+	url = https://github.com/bbzaffari/minimal-HF-RISC-V.git
+[submodule "ucx-os-minimo"]
+	path = ucx-os-minimo
+	url = https://github.com/bbzaffari/ucx-os-minimo
