@@ -13,6 +13,15 @@ The driver enables encryption and decryption of arbitrary-length messages via sy
 - **ECB (Electronic Codebook)**
 - **CBC (Cipher Block Chaining)**
 - **CTR (Counter Mode)**
+  
+## Table of Contents
+- [Objective overview of this work](#objective-overview-of-this-work)
+- [Important files](#important-files)
+- [Validation](#validation)
+- [Register Binding and Signal Mapping in VHDL](#register-binding-and-signal-mapping-in-vhdl)
+- [⚙ Implementation Details and MMIO Access in the RTOS](#implementation-details-and-mmio-access-in-the-rtos)
+- [How to Set Up the Environment](#how-to-set-up-the-environment)
+- [How to run](#how-to-run)
 
 The system includes padding (PKCS#7), task ID management, and validation using real text data, ensuring correct operation across the full encryption pipeline.
 
@@ -50,6 +59,11 @@ The output (stdout) is saved in the [`debug.txt`](https://github.com/bbzaffari/m
 
 ---
 # How to Set Up the Environment
+- [1st Clone](#1st-clone)
+- [2nd Docker Setup](#2nd-docker-setup)
+ - [1. Docker pull the pre-built image](#1-docker-pull-the-pre-built-image)
+ - [2. Run the Docker container](#2-run-the-docker-container)
+- [3rd — Starting/accessing the container](#3rd--startingaccessing-the-container)
 **In three steps:** ***`Clone -> Docker Setup-> Starting the container`***
 
 
@@ -132,11 +146,13 @@ This command **attaches a terminal to the running container**, allowing you to i
 ---
 
 # How to run:
-
+- [ECB](#ecb)
+- [CTR](#ctr)
+- [CBC](#cbc)
 1. It is assumed that the files are located in the `/home` directory.
 2. Sometimes `debug.txt` is automatically deleted, but simply running the command again resolves it.
 3. Validation was performed using `debug.txt`, with output inspected via `hexdump`.
-
++ Validation
 ## ECB
 
 ```bash 
@@ -185,7 +201,7 @@ make clean
 cp /home/ucx-os-minimo/build/target/code.txt /home/minimo-hf-risc/software/code.txt
 make ghdl-vcd TIME=10ms
 ````
-Valiidation CBC:
+Validation CBC:
 ![CBC Mode](docs/CBC.png)
 
 ---
