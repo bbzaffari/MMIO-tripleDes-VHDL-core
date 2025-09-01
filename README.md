@@ -29,8 +29,11 @@ Additionally, optimizations were made in the communication with the cryptographi
  * [minimal-HF-RISC-V/riscv/sim/tdes_tb.vhd](https://github.com/bbzaffari/minimal-HF-RISC-V/blob/6a5041a4e47189d85cda550ba80e718dcd1fe7e8/riscv/sim/tdes_tb.vhd) -> *Register Binding and Signal Mapping in VHDL*
  * [minimal-HF-RISC-V/sim/rv32e_basic/debug.txt](https://github.com/bbzaffari/minimal-HF-RISC-V/blob/6a5041a4e47189d85cda550ba80e718dcd1fe7e8/sim/rv32e_basic/debug.txt)
  * [minimal-HF-RISC-V/devices/peripherals/basic_soc.vhd](https://github.com/bbzaffari/minimal-HF-RISC-V/blob/6a5041a4e47189d85cda550ba80e718dcd1fe7e8/devices/peripherals/basic_soc.vhd)
+ * 
+## Validation:
+The validation process was carried out using the hexdump function, which displays the binary content of a file in hexadecimal and ASCII format for low-level inspection.
+The output (stdout) is saved in the [`debug.txt`](https://github.com/bbzaffari/minimal-HF-RISC-V/blob/6a5041a4e47189d85cda550ba80e718dcd1fe7e8/sim/rv32e_basic/debug.txt) file, accessible from this location.
 
-### Validations -> [docs/](docs/)
 > **Note**: This repository is gradually being explained and translated to English.  
 [![status](https://img.shields.io/badge/files-to%20be%20uploaded-yellow)]()
 ---
@@ -149,6 +152,8 @@ make clean
 cp /home/ucx-os-minimo/build/target/code.txt /home/minimo-hf-risc/software/code.txt
 make ghdl-vcd TIME=10ms
 ````
+![ECB Mode](docs/ECB.png)
+
 
 ## CTR
 ```bash
@@ -164,6 +169,7 @@ make clean
 cp /home/ucx-os-minimo/build/target/code.txt /home/minimo-hf-risc/software/code.txt
 make ghdl-vcd TIME=10ms
 ````
+![CTR Mode](docs/CTR.png)
 
 ## CBC
 ```bash
@@ -179,6 +185,9 @@ make clean
 cp /home/ucx-os-minimo/build/target/code.txt /home/minimo-hf-risc/software/code.txt
 make ghdl-vcd TIME=10ms
 ````
+Valiidation CBC:
+![CBC Mode](docs/CBC.png)
+
 ---
 ---
 
