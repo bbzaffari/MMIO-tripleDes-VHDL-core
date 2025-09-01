@@ -110,13 +110,13 @@ This command **attaches a terminal to the running container**, allowing you to i
 ---
 ---
 
-## How to run:
+# How to run:
 
 1. It is assumed that the files are located in the `/home` directory.
 2. Sometimes `debug.txt` is automatically deleted, but simply running the command again resolves it.
 3. Validation was performed using `debug.txt`, with output inspected via `hexdump`.
 
-### ECB
+## ECB
 
 ```bash 
 cd /home/ucx-os-minimo
@@ -132,7 +132,7 @@ cp /home/ucx-os-minimo/build/target/code.txt /home/minimo-hf-risc/software/code.
 make ghdl-vcd TIME=10ms
 ````
 
-### CTR
+## CTR
 ```bash
 cd /home/ucx-os-minimo
 make veryclean
@@ -147,7 +147,7 @@ cp /home/ucx-os-minimo/build/target/code.txt /home/minimo-hf-risc/software/code.
 make ghdl-vcd TIME=10ms
 ````
 
-### CBC
+## CBC
 ```bash
 cd /home/ucx-os-minimo
 make veryclean
