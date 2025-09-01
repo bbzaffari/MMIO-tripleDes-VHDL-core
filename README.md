@@ -19,7 +19,7 @@ The driver enables encryption and decryption of arbitrary-length messages via sy
 - [Important files](#important-files)
 - [Validation](#validation)
 - [Register Binding and Signal Mapping in VHDL](#register-binding-and-signal-mapping-in-vhdl)
-- [⚙ Implementation Details and MMIO Access in the RTOS](#implementation-details-and-mmio-access-in-the-rtos)
+- [Implementation Details and MMIO Access in the RTOS](#implementation-details-and-mmio-access-in-the-rtos)
 - [How to Set Up the Environment](#how-to-set-up-the-environment)
 - [How to run](#how-to-run)
 
