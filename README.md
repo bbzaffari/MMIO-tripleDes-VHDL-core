@@ -122,11 +122,11 @@ docker run -it --name SE -v "$PWD":/home ghcr.io/sjohann81/linux-es
 ## 3rd — Starting/accessing the container 
 **Accessing the Graphical Interface — *I do not recommend*** ❌
 > By default, the container launches a lightweight graphical environment, which can be accessed via your browser at:
->  **👉 [http://localhost:8080](http://localhost:8080)** 
+>  **[http://localhost:8080](http://localhost:8080)** 
 > This interface provides a minimal desktop environment running inside the container.
 
-If you prefer to work directly via terminal or automation scripts, you can **safely skip the graphical interface**.
-To do so, press `Ctrl + C` in the current terminal to exit the graphical session, and proceed with the next step in the terminal.
+**If you prefer to work directly via terminal or automation scripts, you can** ***safely skip the graphical interface***.
+**To do so, press *`Ctrl + C`* in the current terminal to exit the graphical session, and proceed with the next step in the terminal.**
 
 Once you've created the container using `docker run`, ***you don't need to recreate it again.***
 Instead, follow these two simple commands to ***reuse*** the container:
