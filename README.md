@@ -47,7 +47,7 @@ docker pull ghcr.io/sjohann81/linux-es
 ###  2. Run the Docker container:
 
 ```bash
-docker run -it --name SE -v "$PWD":/root ghcr.io/sjohann81/linux-es
+docker run -it --name SE -v "$PWD":/home ghcr.io/sjohann81/linux-es
 ```
 
 * ***docker run*** **is more than just "starting a container." It’s a compound command** that:
@@ -58,7 +58,7 @@ docker run -it --name SE -v "$PWD":/root ghcr.io/sjohann81/linux-es
    
 * **`-it`**: Allocates an interactive terminal so you can use the command line inside the container.
 * **`--name SE***`**: Names the container `SE`, which helps you reference it easily later.
-* **`-v "$PWD":/root`**: Mounts your current working directory (from your host machine) into the container at the path `/root ( or /home)`.
+* **`-v "$PWD":/home`**: Mounts your current working directory (from your host machine) into the container at the path `/home`.
 
 > **Notes**:
 > - ***1. After the first run, do not repeat the docker run command, or you'll create duplicate containers.***
@@ -69,7 +69,7 @@ docker run -it --name SE -v "$PWD":/root ghcr.io/sjohann81/linux-es
 > 
 > * ***2. `$PWD` is an environment variable that returns your current working directory.***
 >    * That directory **must contain the files you previously cloned** from the project repository.
->    * Inside the container, those files will be accessible at `/root`.
+>    * Inside the container, those files will be accessible at `/home`.
 
 ## 2nd — Starting and accessing the container (after the first run)
 
@@ -96,8 +96,60 @@ This command **attaches a terminal to the running container**, allowing you to i
 * `bash`: Launches the Bash shell inside the container.
 
 > - Use `start + exec` every time you want to return to the container after rebooting or closing Docker — **never `docker run` again** for this purpose.
-> - Together, these two commands will bring you **back into your development environment** inside the container — ready to compile, run, and edit your project files that were mounted in `/root`.
+> - Together, these two commands will bring you **back into your development environment** inside the container — ready to compile, run, and edit your project files that were mounted in `/home`.
 
+
+## How to run:
+
+1. It is assumed that the files are located in the `/home` directory.
+2. Sometimes `debug.txt` is automatically deleted, but simply running the command again resolves it.
+3. Validation was performed using `debug.txt`, with output inspected via `hexdump`.
+
+### ECB
+
+```bash 
+cd /home/ucx-os-minimo
+make veryclean
+make clean
+make ucx ARCH=riscv/hf-riscv-e
+make ECB
+cd /home/minimo-hf-risc/software/
+make clean
+cd /home/minimo-hf-risc/sim/rv32e_basic
+make clean
+cp /home/ucx-os-minimo/build/target/code.txt /home/minimo-hf-risc/software/code.txt
+make ghdl-vcd TIME=10ms
+````
+
+### CTR
+```bash
+cd /home/ucx-os-minimo
+make veryclean
+make clean
+make ucx ARCH=riscv/hf-riscv-e
+make CTR
+cd /home/minimo-hf-risc/software/
+make clean
+cd /home/minimo-hf-risc/sim/rv32e_basic
+make clean
+cp /home/ucx-os-minimo/build/target/code.txt /home/minimo-hf-risc/software/code.txt
+make ghdl-vcd TIME=10ms
+````
+
+### CBC
+```bash
+cd /home/ucx-os-minimo
+make veryclean
+make clean
+make ucx ARCH=riscv/hf-riscv-e
+make CBC
+cd /home/minimo-hf-risc/software/
+make clean
+cd /home/minimo-hf-risc/sim/rv32e_basic
+make clean
+cp /home/ucx-os-minimo/build/target/code.txt /home/minimo-hf-risc/software/code.txt
+make ghdl-vcd TIME=10ms
+````
 ---
 ---
 
