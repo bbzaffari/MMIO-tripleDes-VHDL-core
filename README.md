@@ -45,8 +45,10 @@ Additionally, optimizations were made in the communication with the cryptographi
 
 ---
 # How to Set Up the Environment
+**In three steps:** ***`Clone -> Docker Setup-> Starting the container`***
 
-## Clone 
+
+## 1st Clone 
 
 ```bash
 git clone --recurse https://github.com/bbzaffari/MMIO-tripleDes-VHDL-core
@@ -54,7 +56,7 @@ git clone --recurse https://github.com/bbzaffari/MMIO-tripleDes-VHDL-core
 
 ---
 
-## 1st Docker Setup:
+## 2nd Docker Setup:
 For the purposes of this class, the professor provided a pre-configured Docker environment that includes all the necessary dependencies for the system to run properly.
 You can download and set it up using the following command:
 
@@ -92,7 +94,7 @@ docker run -it --name SE -v "$PWD":/home ghcr.io/sjohann81/linux-es
 >    * Inside the container, those files will be accessible at `/home`.
 
 ---
-## 2nd — Starting and accessing the container (after the first run)
+## 3rd — Starting and accessing the container (after the first run)
 
 Once you've created the container using `docker run`, ***you don't need to recreate it again.***
 Instead, follow these two simple commands to ***reuse*** the container:
