@@ -171,24 +171,21 @@ This command **attaches a terminal to the running container**, allowing you to i
 First, make sure the following tools are installed on your system:
 
 ```bash
-sudo apt update
-sudo apt install ghdl gtkwave
+apt update
+apt install ghdl gtkwave
 ````
 
+```bash
+chmod +x home/run_model.sh
+````
+
+```bash
+cd home/
+````
 ## Electronic Codebook Mode
 
 ```bash 
-cd /home/ucx-os-minimo
-make veryclean
-make clean
-make ucx ARCH=riscv/hf-riscv-e
-make build-app APP_MODE=ECB
-cd /home/minimal-HF-RISC-V/software/
-make clean
-cd /home/minimal-HF-RISC-V/sim/rv32e_basic
-make clean
-cp /home/ucx-os-minimo/build/target/code.txt /home/minimal-HF-RISC-V/software/code.txt
-make ghdl-vcd TIME=10ms
+./run_model.sh ECB
 ````
 **Validation EBC** – *minimal-HF-RISC-V/sim/rv32e_basic/debug.txt*:
 
@@ -197,17 +194,7 @@ make ghdl-vcd TIME=10ms
 
 ## CTR Counter Mode Encryption
 ```bash
-cd /home/ucx-os-minimo
-make veryclean
-make clean
-make ucx ARCH=riscv/hf-riscv-e
-make build-app APP_MODE=CTR
-cd /home/minimal-HF-RISC-V/software/
-make clean
-cd /home/minimal-HF-RISC-V/sim/rv32e_basic
-make clean
-cp /home/ucx-os-minimo/build/target/code.txt /home/minimal-HF-RISC-V/software/code.txt
-make ghdl-vcd TIME=10ms
+./run_model.sh CTR
 ````
 **Validation CTR** – *minimal-HF-RISC-V/sim/rv32e_basic/debug.txt*:
 
@@ -215,17 +202,7 @@ make ghdl-vcd TIME=10ms
 
 ## CBC
 ```bash
-cd /home/ucx-os-minimo
-make veryclean
-make clean
-make ucx ARCH=riscv/hf-riscv-e
-make build-app APP_MODE=CBC
-cd /home/minimal-HF-RISC-V/software/
-make clean
-cd /home/minimal-HF-RISC-V/sim/rv32e_basic
-make clean
-cp /home/ucx-os-minimo/build/target/code.txt /home/minimal-HF-RISC-V/software/code.txt
-make ghdl-vcd TIME=10ms
+./run_model.sh CBC
 ````
 **Validation CBC** – *minimal-HF-RISC-V/sim/rv32e_basic/debug.txt*:
 
