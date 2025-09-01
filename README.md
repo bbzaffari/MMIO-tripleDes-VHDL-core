@@ -16,6 +16,8 @@ The driver enables encryption and decryption of arbitrary-length messages via sy
 
 The system includes padding (PKCS#7), task ID management, and validation using real text data, ensuring correct operation across the full encryption pipeline.
 
+> **Note**: This repository is gradually being updated and translated to English.  
+[![status](https://img.shields.io/badge/files-to%20be%20uploaded-yellow)]()
 ---
 
 
@@ -27,15 +29,15 @@ The system includes padding (PKCS#7), task ID management, and validation using r
 
 
 
+---
 # How to Set Up the Environment
 
-## Clone the repos
+## Clone 
 
 ```bash
 git clone --recurse https://github.com/bbzaffari/MMIO-tripleDes-VHDL-core
 ````
 
----
 ---
 
 ## 1st Docker Setup:
@@ -75,6 +77,7 @@ docker run -it --name SE -v "$PWD":/home ghcr.io/sjohann81/linux-es
 >    * That directory **must contain the files you previously cloned** from the project repository.
 >    * Inside the container, those files will be accessible at `/home`.
 
+---
 ## 2nd — Starting and accessing the container (after the first run)
 
 Once you've created the container using `docker run`, ***you don't need to recreate it again.***
@@ -102,6 +105,9 @@ This command **attaches a terminal to the running container**, allowing you to i
 > - Use `start + exec` every time you want to return to the container after rebooting or closing Docker — **never `docker run` again** for this purpose.
 > - Together, these two commands will bring you **back into your development environment** inside the container — ready to compile, run, and edit your project files that were mounted in `/home`.
 
+
+---
+---
 
 ## How to run:
 
@@ -157,5 +163,4 @@ make ghdl-vcd TIME=10ms
 ---
 ---
 
-> **Note**: This repository is gradually being updated and translated to English.  
-[![status](https://img.shields.io/badge/files-to%20be%20uploaded-yellow)]()
+
