@@ -61,8 +61,8 @@ The output (stdout) is saved in the [`debug.txt`](https://github.com/bbzaffari/m
 # How to Set Up the Environment
 - [1st Clone](#1st-clone)
 - [2nd Docker Setup](#2nd-docker-setup)
- - [1. Docker pull the pre-built image](#1-docker-pull-the-pre-built-image)
- - [2. Run the Docker container](#2-run-the-docker-container)
+   - [1. Docker pull the pre-built image](#1-docker-pull-the-pre-built-image)
+   - [2. Run the Docker container](#2-run-the-docker-container)
 - [3rd — Starting/accessing the container](#3rd--startingaccessing-the-container)
 **In three steps:** ***`Clone -> Docker Setup-> Starting the container`***
 
