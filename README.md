@@ -174,7 +174,7 @@ cd /home/minimal-HF-RISC-V/software/
 make clean
 cd /home/minimal-HF-RISC-V/sim/rv32e_basic
 make clean
-cp /home/ucx-os-minimo/build/target/code.txt /home/minimo-hf-risc/software/code.txt
+cp /home/ucx-os-minimo/build/target/code.txt /home/minimal-HF-RISC-V/software/code.txt
 make ghdl-vcd TIME=10ms
 ````
 ![ECB Mode](docs/ECB.png)
@@ -191,7 +191,7 @@ cd /home/minimal-HF-RISC-V/software/
 make clean
 cd /home/minimal-HF-RISC-V/sim/rv32e_basic
 make clean
-cp /home/ucx-os-minimo/build/target/code.txt /home/minimo-hf-risc/software/code.txt
+cp /home/ucx-os-minimo/build/target/code.txt /home/minimal-HF-RISC-V/software/code.txt
 make ghdl-vcd TIME=10ms
 ````
 ![CTR Mode](docs/CTR.png)
@@ -207,7 +207,7 @@ cd /home/minimal-HF-RISC-V/software/
 make clean
 cd /home/minimal-HF-RISC-V/sim/rv32e_basic
 make clean
-cp /home/ucx-os-minimo/build/target/code.txt /home/minimo-hf-risc/software/code.txt
+cp /home/ucx-os-minimo/build/target/code.txt /home/minimal-HF-RISC-V/software/code.txt
 make ghdl-vcd TIME=10ms
 ````
 Validation CBC:
