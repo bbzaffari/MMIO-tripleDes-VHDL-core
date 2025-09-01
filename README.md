@@ -170,9 +170,9 @@ make veryclean
 make clean
 make ucx ARCH=riscv/hf-riscv-e
 make ECB
-cd /home/minimo-hf-risc/software/
+cd /home/minimal-HF-RISC-V/software/
 make clean
-cd /home/minimo-hf-risc/sim/rv32e_basic
+cd /home/minimal-HF-RISC-V/sim/rv32e_basic
 make clean
 cp /home/ucx-os-minimo/build/target/code.txt /home/minimo-hf-risc/software/code.txt
 make ghdl-vcd TIME=10ms
@@ -187,9 +187,9 @@ make veryclean
 make clean
 make ucx ARCH=riscv/hf-riscv-e
 make CTR
-cd /home/minimo-hf-risc/software/
+cd /home/minimal-HF-RISC-V/software/
 make clean
-cd /home/minimo-hf-risc/sim/rv32e_basic
+cd /home/minimal-HF-RISC-V/sim/rv32e_basic
 make clean
 cp /home/ucx-os-minimo/build/target/code.txt /home/minimo-hf-risc/software/code.txt
 make ghdl-vcd TIME=10ms
@@ -203,9 +203,9 @@ make veryclean
 make clean
 make ucx ARCH=riscv/hf-riscv-e
 make CBC
-cd /home/minimo-hf-risc/software/
+cd /home/minimal-HF-RISC-V/software/
 make clean
-cd /home/minimo-hf-risc/sim/rv32e_basic
+cd /home/minimal-HF-RISC-V/sim/rv32e_basic
 make clean
 cp /home/ucx-os-minimo/build/target/code.txt /home/minimo-hf-risc/software/code.txt
 make ghdl-vcd TIME=10ms
