@@ -47,8 +47,11 @@ The output (stdout) is saved in the [`debug.txt`](https://github.com/bbzaffari/m
 
 
 # 🧩 Register Binding and Signal Mapping in VHDL
-[minimal-HF-RISC-V/riscv/sim/tdes_tb.vhd](https://github.com/bbzaffari/minimal-HF-RISC-V/blob/6a5041a4e47189d85cda550ba80e718dcd1fe7e8/riscv/sim/tdes_tb.vhd)
+
 ![Explanation incoming](https://img.shields.io/badge/Explanation_incoming-blue?style=for-the-badge&logo=gitbook)
+
+[minimal-HF-RISC-V/riscv/sim/tdes_tb.vhd](https://github.com/bbzaffari/minimal-HF-RISC-V/blob/6a5041a4e47189d85cda550ba80e718dcd1fe7e8/riscv/sim/tdes_tb.vhd)
+
 
 ---
 
