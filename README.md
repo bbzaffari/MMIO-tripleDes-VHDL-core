@@ -24,6 +24,7 @@ The system includes padding (PKCS#7), task ID management, and validation using r
 # 🧩 Register Binding and Signal Mapping in VHDL
 
 
+---
 
 # ⚙ Implementation Details and MMIO Access in the RTOS
 
