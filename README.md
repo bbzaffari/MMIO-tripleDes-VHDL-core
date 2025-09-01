@@ -177,7 +177,7 @@ cd /home/ucx-os-minimo
 make veryclean
 make clean
 make ucx ARCH=riscv/hf-riscv-e
-make ECB
+make build-app APP_MODE=ECB
 cd /home/minimal-HF-RISC-V/software/
 make clean
 cd /home/minimal-HF-RISC-V/sim/rv32e_basic
@@ -196,7 +196,7 @@ cd /home/ucx-os-minimo
 make veryclean
 make clean
 make ucx ARCH=riscv/hf-riscv-e
-make CTR
+make build-app APP_MODE=CTR
 cd /home/minimal-HF-RISC-V/software/
 make clean
 cd /home/minimal-HF-RISC-V/sim/rv32e_basic
@@ -214,7 +214,7 @@ cd /home/ucx-os-minimo
 make veryclean
 make clean
 make ucx ARCH=riscv/hf-riscv-e
-make CBC
+make build-app APP_MODE=CBC
 cd /home/minimal-HF-RISC-V/software/
 make clean
 cd /home/minimal-HF-RISC-V/sim/rv32e_basic
