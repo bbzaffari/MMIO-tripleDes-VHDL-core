@@ -16,9 +16,17 @@ The driver enables encryption and decryption of arbitrary-length messages via sy
 
 The system includes padding (PKCS#7), task ID management, and validation using real text data, ensuring correct operation across the full encryption pipeline.
 
-# Important files:
- * [ucx-os-minimo/app/tdes_driver/*](https://github.com/bbzaffari/ucx-os-minimo/tree/a263a33a0129bab2e1d8242ce02c7eee52ae085b/app/tdes_driver)
- * [minimal-HF-RISC-V/riscv/sim/tdes_tb.vhd](https://github.com/bbzaffari/minimal-HF-RISC-V/blob/6a5041a4e47189d85cda550ba80e718dcd1fe7e8/riscv/sim/tdes_tb.vhd)
+## Objective overview of this work
+
+The objective of this work was to implement and validate a device driver for encryption based on the Triple DES (3DES) algorithm on the UCX/OS operating system, running on the HF-RISC-E processor. For this purpose, a 3DES cryptographic core described in hardware (VHDL) and mapped via MMIO on the SoC bus was used.
+
+The application communicates with the driver through the standard calls write() (to encrypt or decrypt data) and read() (to retrieve the result). The driver implements task control, access permission verification by Task ID, and supports the ECB (Electronic Code Book) mode. Tests were conducted with real messages and padding management following the PKCS#7 standard.
+
+Additionally, optimizations were made in the communication with the cryptographic IP, including checking the READY signal before reading the output, thus avoiding race conditions. The driver's structure allows modularity for future modes (CBC, CTR) and ensures data integrity in the encrypted input/output process. The main application was used to test the complete encryption and decryption pipeline, validating the correctness of the implemented algorithm.
+
+## Important files:
+ * [ucx-os-minimo/app/tdes_driver/*](https://github.com/bbzaffari/ucx-os-minimo/tree/a263a33a0129bab2e1d8242ce02c7eee52ae085b/app/tdes_driver) -> *Tests applications & triple-DES driver using read and write interface*
+ * [minimal-HF-RISC-V/riscv/sim/tdes_tb.vhd](https://github.com/bbzaffari/minimal-HF-RISC-V/blob/6a5041a4e47189d85cda550ba80e718dcd1fe7e8/riscv/sim/tdes_tb.vhd) -> *Register Binding and Signal Mapping in VHDL*
  * [minimal-HF-RISC-V/sim/rv32e_basic/debug.txt](https://github.com/bbzaffari/minimal-HF-RISC-V/blob/6a5041a4e47189d85cda550ba80e718dcd1fe7e8/sim/rv32e_basic/debug.txt)
  * [minimal-HF-RISC-V/devices/peripherals/basic_soc.vhd](https://github.com/bbzaffari/minimal-HF-RISC-V/blob/6a5041a4e47189d85cda550ba80e718dcd1fe7e8/devices/peripherals/basic_soc.vhd)
 > **Note**: This repository is gradually being explained and translated to English.  
@@ -27,7 +35,7 @@ The system includes padding (PKCS#7), task ID management, and validation using r
 
 
 # 🧩 Register Binding and Signal Mapping in VHDL
-
+[minimal-HF-RISC-V/riscv/sim/tdes_tb.vhd](https://github.com/bbzaffari/minimal-HF-RISC-V/blob/6a5041a4e47189d85cda550ba80e718dcd1fe7e8/riscv/sim/tdes_tb.vhd)
 
 ---
 
