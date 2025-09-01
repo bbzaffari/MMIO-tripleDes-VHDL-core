@@ -161,7 +161,15 @@ This command **attaches a terminal to the running container**, allowing you to i
 1. It is assumed that the files are located in the `/home` directory.
 2. Sometimes `debug.txt` is automatically deleted, but simply running the command again resolves it.
 3. Validation was performed using `debug.txt`, with output inspected via `hexdump`.
-+ Validation
+
+
+First, make sure the following tools are installed on your system:
+
+```bash
+sudo apt update
+sudo apt install ghdl gtkwave
+````
+
 ## ECB
 
 ```bash 
