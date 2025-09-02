@@ -15,8 +15,7 @@ The driver enables encryption and decryption of arbitrary-length messages via sy
 - **CTR (Counter Mode)**
 
 ## Documentation
-For detailed electrical characteristics, communication protocols, and performance specifications, refer to the official
-  
+For detailed electrical characteristics, communication protocols, and performance specifications, refer to the official [datasheet](/docs/3DESDatasheet_CoreTex_OpenCores.pdf)
 ## Table of Contents
 - [Objective overview of this work](#objective-overview-of-this-work)
 - [Important files](#important-files)
