@@ -50,7 +50,118 @@ The output (stdout) is saved in the [`debug.txt`](https://github.com/bbzaffari/m
 
 ![Explanation incoming](https://img.shields.io/badge/Explanation_incoming-blue?style=for-the-badge&logo=gitbook)
 
+##### The VHDL process that maps read/write operations to internal hardware signals
+This project implements a **memory-mapped interface** between a 3DES hardware encryption core (written in VHDL) and a processor (e.g., RISC-V) via low-level C bindings. The goal is to expose the har
 [minimal-HF-RISC-V/riscv/sim/tdes_tb.vhd](https://github.com/bbzaffari/minimal-HF-RISC-V/blob/6a5041a4e47189d85cda550ba80e718dcd1fe7e8/riscv/sim/tdes_tb.vhd)
+```vhdl
+    -- 3DES Core
+    data_read_des <= data_read_des_s(7 downto 0) & data_read_des_s(15 downto 8) & data_read_des_s(23 downto 16) & data_read_des_s(31 downto 24);
+    ext_periph <= '1' when address(31 downto 24) = x"e7" else '0';
+    
+    -- Read Process: Maps 3DES outputs to processor's readable addresses
+    process (clock_in, reset, address, data_out_des, function_select_des, reset_des, ldkey_des, lddata_des, out_ready_des)
+    begin
+        if reset = '1' then
+            data_read_des_s <= (others => '0');
+        elsif clock_in'event and clock_in = '1' then
+            if (ext_periph = '1') then  -- 3DES at 0xe7000000
+                case address(7 downto 4) is
+                    when "0000" =>      -- Control Register Read: 0xe7000000
+                                        -- Provides status of control signals, especially out_ready at bit 0
+                        data_read_des_s <= x"000000" & "000" & function_select_des & reset_des & ldkey_des & lddata_des & out_ready_des;
+                    
+                    when "0001" =>      -- Not readable, write-only
+                        data_read_des_s <= (others => '0');
+                    when "0010" =>      -- Not readable, write-only
+                        data_read_des_s <= (others => '0');
+                    when "0011" =>      -- Not readable, write-only
+                        data_read_des_s <= (others => '0');
+                    when "0100" =>      -- Not readable, write-only
+                        data_read_des_s <= (others => '0');
+                    when "0101" =>      -- Not readable, write-only
+                        data_read_des_s <= (others => '0');
+                    when "0110" =>      -- Not readable, write-only
+                        data_read_des_s <= (others => '0');
+                    when "0111" =>      -- Not readable, write-only
+                        data_read_des_s <= (others => '0');
+                    when "1000" =>      -- Not readable, write-only
+                        data_read_des_s <= (others => '0');
+                        
+                    when "1001" =>      -- Output Data Read [0]: 0xe7000090
+                        data_read_des_s <= data_out_des(32 to 63);
+                    when "1010" =>      -- Output Data Read [1]: 0xe70000A0
+                        data_read_des_s <= data_out_des(0 to 31);
+                    when others =>
+                        data_read_des_s <= (others => '0');
+                end case;
+            end if;
+        end if;
+    end process;
+
+    process (clock_in, reset)
+    begin
+        if reset = '1' then
+            key1_in_des <= (others => '0');
+            key2_in_des <= (others => '0');
+            key3_in_des <= (others => '0');
+            data_in_des <= (others => '0');
+            function_select_des <= '0';
+            reset_des <= '0';
+            ldkey_des <= '0';
+            lddata_des <= '0';
+        elsif clock_in'event and clock_in = '1' then
+            if (ext_periph = '1' and data_we /= "0000") then
+                case address(7 downto 4) is
+                    when "0000" =>
+                         function_select_des <= data_write_periph(4);
+                         reset_des <= data_write_periph(3);
+                         ldkey_des <= data_write_periph(2);
+                         lddata_des <= data_write_periph(1);
+                         
+                    when "0001" =>      --  0xe7000010
+                        key1_in_des(32 to 63) <= data_write_periph;
+                    when "0010" =>      --  0xe7000020
+                        key1_in_des(0 to 31) <= data_write_periph;  
+                        
+                    when "0011" =>      --  0xe7000030
+                        key2_in_des(32 to 63) <= data_write_periph;
+                    when "0100" =>      -- 0xe7000040
+                        key2_in_des(0 to 31) <= data_write_periph;
+                        
+                    when "0101" =>      -- 0xe7000050
+                        key3_in_des(32 to 63) <= data_write_periph;
+                    when "0110" =>      -- 0xe7000060
+                        key3_in_des(0 to 31) <= data_write_periph;
+                        
+                    when "0111" =>      -- 0xe7000070
+                        data_in_des(32 to 63) <= data_write_periph;
+                    when "1000" =>      -- 0xe7000080
+                        data_in_des(0 to 31) <= data_write_periph;
+                    when others =>
+                        NULL;
+                end case;
+            end if;
+        end if;
+    end process;
+    
+  
+    crypto_core: entity work.tdes_top
+    port map(   
+        key1_in => key1_in_des,
+        key2_in => key2_in_des,
+        key3_in => key3_in_des,
+        function_select => function_select_des, 
+        data_in  => data_in_des,
+        data_out => data_out_des,
+        lddata => lddata_des,                   
+        ldkey => ldkey_des,                    
+        out_ready => out_ready_des,      
+        reset => reset_des,                  
+        clock => clock_in
+    );
+````
+
+
 
 
 ---
