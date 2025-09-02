@@ -14,8 +14,12 @@ The driver enables encryption and decryption of arbitrary-length messages via sy
 - **CBC (Cipher Block Chaining)**
 - **CTR (Counter Mode)**
 
+
+The system includes padding (PKCS#7), task ID management, and validation using real text data, ensuring correct operation across the full encryption pipeline.
+
 ## Documentation
-For detailed electrical characteristics, communication protocols, and performance specifications, refer to the [***official datasheet***](/docs/3DESDatasheet_CoreTex_OpenCores.pdf)
+> For detailed electrical characteristics, communication protocols, and performance specifications, refer to the [***official datasheet***](/docs/3DESDatasheet_CoreTex_OpenCores.pdf)
+
 ## Table of Contents
 - [Objective overview of this work](#objective-overview-of-this-work)
 - [Important files](#important-files)
@@ -25,7 +29,6 @@ For detailed electrical characteristics, communication protocols, and performanc
 - [How to Set Up the Environment](#how-to-set-up-the-environment)
 - [How to run](#how-to-run)
 
-The system includes padding (PKCS#7), task ID management, and validation using real text data, ensuring correct operation across the full encryption pipeline.
 
 ## Objective overview of this work
 
