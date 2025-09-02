@@ -48,9 +48,19 @@ The output (stdout) is saved in the [`debug.txt`](https://github.com/bbzaffari/m
 
 # 🧩 Signal Mapping in VHDL and Register Binding
 
+This project implements a **memory-mapped interface** between a 3DES hardware encryption core (written in VHDL) and a processor (e.g., RISC-V) via low-level C bindings.
+
 ## Signal Mapping 
 ##### The VHDL process that maps read/write operations to internal hardware signals
-This project implements a **memory-mapped interface** between a 3DES hardware encryption core (written in VHDL) and a processor (e.g., RISC-V) via low-level C bindings. The goal is to expose the hardware
+
+This pattern follows the classical ***`memory-mapped I/O`*** architecture, where:
+
+- Software performs reads/writes to fixed memory addresses (via `volatile uint32_t*` in C).
+- Hardware (VHDL) listens to those addresses and either:
+  - **Latches** the written value into internal signals.
+  - **Returns** current status or result values during a read.
+
+This design decouples the processor from the internals of the crypto core, and provides a **clean interface contract** between the software and hardware domains.
 
 [minimal-HF-RISC-V/riscv/sim/tdes_tb.vhd](https://github.com/bbzaffari/minimal-HF-RISC-V/blob/6a5041a4e47189d85cda550ba80e718dcd1fe7e8/riscv/sim/tdes_tb.vhd)
 
@@ -163,6 +173,9 @@ This project implements a **memory-mapped interface** between a 3DES hardware en
 ````
 ## Register Binding
 
+This header file defines the **memory-mapped register interface** for a Triple DES (3DES) hardware crypto core. It allows a processor (e.g., RISC-V with UCX/OS) to interact with the hardware by reading and writing specific addresses corresponding to **control**, **keys**, **input data**, and **output ciphertext**.
+
+The macros in this file represent physical register addresses, casted as `volatile uint32_t*`, to ensure **direct and safe hardware access**.
 
 [ucx-os-minimo/app/tdes_driver/tdes_driver.c](https://github.com/bbzaffari/ucx-os-minimo/blob/1663f0fc2db87fe31ab12ee7b267204990797d60/app/tdes_driver/tdes_driver.c)
 
