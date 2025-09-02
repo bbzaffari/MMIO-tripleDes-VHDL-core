@@ -39,7 +39,7 @@ Additionally, optimizations were made in the communication with the cryptographi
  * [ucx-os-minimo/app/tdes_driver/*](https://github.com/bbzaffari/ucx-os-minimo/tree/a263a33a0129bab2e1d8242ce02c7eee52ae085b/app/tdes_driver) -> *Tests applications & triple-DES driver using read and write interface*
  * [minimal-HF-RISC-V/riscv/sim/tdes_tb.vhd](https://github.com/bbzaffari/minimal-HF-RISC-V/blob/6a5041a4e47189d85cda550ba80e718dcd1fe7e8/riscv/sim/tdes_tb.vhd) -> *Register Binding and Signal Mapping in VHDL*
  * [minimal-HF-RISC-V/sim/rv32e_basic/debug.txt](https://github.com/bbzaffari/minimal-HF-RISC-V/blob/6a5041a4e47189d85cda550ba80e718dcd1fe7e8/sim/rv32e_basic/debug.txt) -> *Debug*
- * [minimal-HF-RISC-V/devices/controllers/tdes/*](https://github.com/bbzaffari/minimal-HF-RISC-V/tree/6a5041a4e47189d85cda550ba80e718dcd1fe7e8/devices/controllers/tdes)
+ * [minimal-HF-RISC-V/devices/controllers/tdes/*](https://github.com/bbzaffari/minimal-HF-RISC-V/tree/6a5041a4e47189d85cda550ba80e718dcd1fe7e8/devices/controllers/tdes) -> *RTL hardware description, provided by the vendor*
    
 ## Validation:
 The validation process was carried out using the hexdump function, which displays the binary content of a file in hexadecimal and ASCII format for low-level inspection.
