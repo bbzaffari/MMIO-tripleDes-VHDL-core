@@ -213,8 +213,7 @@ The macros in this file represent physical register addresses, casted as `volati
 
 # ⚙ Implementation Details and MMIO Access in the RTOS
 
-See [UCX README](https://github.com/bbzaffari/ucx-os-minimo) for complete details — omitted here for clarity
-![Explanation incoming](https://img.shields.io/badge/Explanation_incoming-blue?style=for-the-badge&logo=gitbook)
+***See [`🔗🔗🔗🔗🔗UCX README`](https://github.com/bbzaffari/ucx-os-minimo) for complete details — omitted here for clarity***
 
 
 ---
