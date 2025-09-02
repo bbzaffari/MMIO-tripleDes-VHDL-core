@@ -48,7 +48,7 @@ The output (stdout) is saved in the [`debug.txt`](https://github.com/bbzaffari/m
 
 # 🧩 Bidirectional hardware-software interface for cryptographic peripherals 
 
-This project implements a **memory-mapped interface** between a 3DES hardware encryption core (written in VHDL) and a processor (e.g., RISC-V) via low-level C bindings.
+This project implements a bidirectional, **memory-mapped I/O** interface between a 3DES hardware encryption core, described in VHDL, and a RISC-V processor running firmware written in low-level C. The interface allows the CPU to configure control signals, load keys and plaintext blocks, and retrieve encrypted output — all through mapped addresses in the processor's memory space.
 
 ## Signal Mapping / RTL Bus Interface Logic for MMIO
 ##### The VHDL process that maps read/write operations to internal hardware signals
