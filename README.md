@@ -24,7 +24,7 @@ The system includes padding (PKCS#7), task ID management, and validation using r
 - [Overview of this work](#overview-of-this-work)
 - [Important files](#important-files)
 - [Validation](#validation)
-- [MMIO Register Interface for a VHDL 3DES Core](#mmio-register-interface-for-a-vhdl-3des-core)
+- [MMIO Register Interface for a 3DES VHDL IP Core](#mmio-register-interface-for-a-3des-vhdl-ip-core)
 - [How to Set Up the Environment](#how-to-set-up-the-environment)
 - [How to run](#how-to-run)
 
