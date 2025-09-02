@@ -1,4 +1,4 @@
-# 3DES MMIO Driver on HF-RISC + UCX/OS
+# 3DES MMIO Driver on RISC + UCX/OS
 
 This project implements a **`Triple DES (3DES)`** encryption system in a minimal embedded stack, using:
 
