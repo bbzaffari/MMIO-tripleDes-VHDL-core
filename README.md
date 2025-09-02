@@ -18,7 +18,7 @@ The driver enables encryption and decryption of arbitrary-length messages via sy
 - [Objective overview of this work](#objective-overview-of-this-work)
 - [Important files](#important-files)
 - [Validation](#validation)
-- [Register Binding and Signal Mapping in VHDL](#register-binding-and-signal-mapping-in-vhdl)
+- [Signal Mapping in VHDL and Register Binding](#signal-mapping-in-vhdl-and-register-binding)
 - [Implementation Details and MMIO Access in the RTOS](#implementation-details-and-mmio-access-in-the-rtos)
 - [How to Set Up the Environment](#how-to-set-up-the-environment)
 - [How to run](#how-to-run)
@@ -46,10 +46,9 @@ The output (stdout) is saved in the [`debug.txt`](https://github.com/bbzaffari/m
 ---
 
 
-# 🧩 Register Binding and Signal Mapping in VHDL
+# 🧩 Signal Mapping in VHDL and Register Binding
 
-![Explanation incoming](https://img.shields.io/badge/Explanation_incoming-blue?style=for-the-badge&logo=gitbook)
-
+## Signal Mapping 
 ##### The VHDL process that maps read/write operations to internal hardware signals
 This project implements a **memory-mapped interface** between a 3DES hardware encryption core (written in VHDL) and a processor (e.g., RISC-V) via low-level C bindings. The goal is to expose the har
 [minimal-HF-RISC-V/riscv/sim/tdes_tb.vhd](https://github.com/bbzaffari/minimal-HF-RISC-V/blob/6a5041a4e47189d85cda550ba80e718dcd1fe7e8/riscv/sim/tdes_tb.vhd)
@@ -160,7 +159,27 @@ This project implements a **memory-mapped interface** between a 3DES hardware en
         clock => clock_in
     );
 ````
+## Register Binding
 
+```c
+#include <ucx.h>
+#include <device.h>
+#include "tdes_driver.h"
+
+#define DES_BASE			0xe7000000
+#define DES_CONTROL			(*(volatile uint32_t *)(DES_BASE + 0x000))
+#define DES_KEY1_1			(*(volatile uint32_t *)(DES_BASE + 0x010))
+#define DES_KEY1_2			(*(volatile uint32_t *)(DES_BASE + 0x020))
+#define DES_KEY2_1			(*(volatile uint32_t *)(DES_BASE + 0x030))
+#define DES_KEY2_2			(*(volatile uint32_t *)(DES_BASE + 0x040))
+#define DES_KEY3_1			(*(volatile uint32_t *)(DES_BASE + 0x050))
+#define DES_KEY3_2			(*(volatile uint32_t *)(DES_BASE + 0x060))
+#define DES_IN0			    (*(volatile uint32_t *)(DES_BASE + 0x070))
+#define DES_IN1			    (*(volatile uint32_t *)(DES_BASE + 0x080))
+#define DES_OUT0			(*(volatile uint32_t *)(DES_BASE + 0x090))
+#define DES_OUT1			(*(volatile uint32_t *)(DES_BASE + 0x0A0))
+
+````
 
 
 
