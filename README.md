@@ -41,7 +41,7 @@ Additionally, optimizations were made in the communication with the cryptographi
    
 ## Validation:
 The validation process was carried out using the hexdump function, which displays the binary content of a file in hexadecimal and ASCII format for low-level inspection.
-The output (stdout) is saved in the [`debug.txt`](https://github.com/bbzaffari/minimal-HF-RISC-V/sim/rv32e_basic/debug.txt) file, accessible from this location.
+The output (stdout) is saved in the [`debug.txt`](https://github.com/bbzaffari/minimal-HF-RISC-V/blob/6a5041a4e47189d85cda550ba80e718dcd1fe7e8/sim/rv32e_basic/debug.txt) file, accessible from this location.
 
 ---
 
@@ -50,8 +50,10 @@ The output (stdout) is saved in the [`debug.txt`](https://github.com/bbzaffari/m
 
 ## Signal Mapping 
 ##### The VHDL process that maps read/write operations to internal hardware signals
-This project implements a **memory-mapped interface** between a 3DES hardware encryption core (written in VHDL) and a processor (e.g., RISC-V) via low-level C bindings. The goal is to expose the har
-[minimal-HF-RISC-V/riscv/sim/tdes_tb.vhd](https://github.com/bbzaffari/minimal-HF-RISC-V/riscv/sim/tdes_tb.vhd)
+This project implements a **memory-mapped interface** between a 3DES hardware encryption core (written in VHDL) and a processor (e.g., RISC-V) via low-level C bindings. The goal is to expose the hardware
+
+[minimal-HF-RISC-V/riscv/sim/tdes_tb.vhd](https://github.com/bbzaffari/minimal-HF-RISC-V/blob/6a5041a4e47189d85cda550ba80e718dcd1fe7e8/riscv/sim/tdes_tb.vhd)
+
 ```vhdl
     -- 3DES Core
     data_read_des <= data_read_des_s(7 downto 0) & data_read_des_s(15 downto 8) & data_read_des_s(23 downto 16) & data_read_des_s(31 downto 24);
@@ -160,7 +162,10 @@ This project implements a **memory-mapped interface** between a 3DES hardware en
     );
 ````
 ## Register Binding
-[ucx-os-minimo/app/tdes_driver/tdes_driver.c](https://github.com/bbzaffari/ucx-os-minimo/app/tdes_driver.c) 
+
+
+[ucx-os-minimo/app/tdes_driver/tdes_driver.c](https://github.com/bbzaffari/ucx-os-minimo/blob/1663f0fc2db87fe31ab12ee7b267204990797d60/app/tdes_driver/tdes_driver.c)
+
 ```c
 #include <ucx.h>
 #include <device.h>
