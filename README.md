@@ -18,7 +18,7 @@ The driver enables encryption and decryption of arbitrary-length messages via sy
 - [Objective overview of this work](#objective-overview-of-this-work)
 - [Important files](#important-files)
 - [Validation](#validation)
-- [Signal Mapping in VHDL and Register Binding](#signal-mapping-in-vhdl-and-register-binding)
+- [Bidirectional hardware-software interface for cryptographic peripherals](#bidirectional-hardware-software-interface-for-cryptographic-peripherals)
 - [Implementation Details and MMIO Access in the RTOS](#implementation-details-and-mmio-access-in-the-rtos)
 - [How to Set Up the Environment](#how-to-set-up-the-environment)
 - [How to run](#how-to-run)
@@ -46,11 +46,11 @@ The output (stdout) is saved in the [`debug.txt`](https://github.com/bbzaffari/m
 ---
 
 
-# 🧩 Signal Mapping in VHDL and Register Binding
+# 🧩 Bidirectional hardware-software interface for cryptographic peripherals 
 
 This project implements a **memory-mapped interface** between a 3DES hardware encryption core (written in VHDL) and a processor (e.g., RISC-V) via low-level C bindings.
 
-## Signal Mapping 
+## Signal Mapping / RTL Bus Interface Logic for MMIO
 ##### The VHDL process that maps read/write operations to internal hardware signals
 
 This pattern follows the classical ***`memory-mapped I/O`*** architecture, where:
@@ -171,7 +171,7 @@ This design decouples the processor from the internals of the crypto core, and p
         clock => clock_in
     );
 ````
-## Register Binding
+## Register Abstraction Layer for MMIO
 
 This header file defines the **memory-mapped register interface** for a Triple DES (3DES) hardware crypto core. It allows a processor (e.g., RISC-V with UCX/OS) to interact with the hardware by reading and writing specific addresses corresponding to **control**, **keys**, **input data**, and **output ciphertext**.
 
