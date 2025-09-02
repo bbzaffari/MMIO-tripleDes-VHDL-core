@@ -24,7 +24,7 @@ The system includes padding (PKCS#7), task ID management, and validation using r
 - [Objective overview of this work](#objective-overview-of-this-work)
 - [Important files](#important-files)
 - [Validation](#validation)
-- [Bidirectional hardware-software interface for cryptographic peripherals](#bidirectional-hardware-software-interface-for-cryptographic-peripherals)
+- [MMIO hardware-software interface for cryptographic peripherals](#mmio-hardware-software-interface-for-cryptographic-peripherals)
 - [How to Set Up the Environment](#how-to-set-up-the-environment)
 - [How to run](#how-to-run)
 
@@ -53,7 +53,7 @@ The output (stdout) is saved in the [`debug.txt`](https://github.com/bbzaffari/m
 ---
 
 
-# 🧩 Bidirectional hardware-software interface for cryptographic peripherals 
+# MMIO hardware-software interface for cryptographic peripherals 
 
 This project implements a bidirectional, **memory-mapped I/O** interface between a 3DES hardware encryption core, described in VHDL, and a RISC-V processor running firmware written in low-level C. The interface allows the CPU to configure control signals, load keys and plaintext blocks, and retrieve encrypted output — all through mapped addresses in the processor's memory space.
 
