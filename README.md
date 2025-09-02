@@ -21,15 +21,15 @@ The system includes padding (PKCS#7), task ID management, and validation using r
 > For detailed electrical characteristics, communication protocols, and performance specifications, refer to the [***official datasheet***](/docs/3DESDatasheet_CoreTex_OpenCores.pdf)
 
 ## Table of Contents
-- [Objective overview of this work](#objective-overview-of-this-work)
+- [Overview of this work](#overview-of-this-work)
 - [Important files](#important-files)
 - [Validation](#validation)
-- [MMIO hardware-software interface for cryptographic peripherals](#mmio-hardware-software-interface-for-cryptographic-peripherals)
+- [MMIO Register Interface for a VHDL 3DES Core](#mmio-register-interface-for-a-vhdl-3des-core)
 - [How to Set Up the Environment](#how-to-set-up-the-environment)
 - [How to run](#how-to-run)
 
 
-## Objective overview of this work
+## Overview of this work
 
 The objective of this work was to implement and validate a device driver for encryption based on the Triple DES (3DES) algorithm on the UCX/OS operating system, running on the HF-RISC-E processor. For this purpose, a 3DES cryptographic core described in hardware (VHDL) and mapped via MMIO on the SoC bus was used.
 
@@ -53,7 +53,7 @@ The output (stdout) is saved in the [`debug.txt`](https://github.com/bbzaffari/m
 ---
 
 
-# MMIO hardware-software interface for cryptographic peripherals 
+# MMIO Register Interface for a VHDL 3DES
 
 This project implements a bidirectional, **memory-mapped I/O** interface between a 3DES hardware encryption core, described in VHDL, and a RISC-V processor running firmware written in low-level C. The interface allows the CPU to configure control signals, load keys and plaintext blocks, and retrieve encrypted output — all through mapped addresses in the processor's memory space.
 
