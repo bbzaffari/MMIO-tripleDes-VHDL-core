@@ -15,7 +15,7 @@ The driver enables encryption and decryption of arbitrary-length messages via sy
 - **CTR (Counter Mode)**
 
 
-The system includes padding (PKCS#7), task ID management, and validation using real text data, ensuring correct operation across the full encryption pipeline.
+The system includes: PKCS#7 padding; Task ID management; Validation using real text data. 
 
 ## Documentation
 > For detailed electrical characteristics, communication protocols, and performance specifications, refer to the [***official datasheet***](/docs/3DESDatasheet_CoreTex_OpenCores.pdf)
