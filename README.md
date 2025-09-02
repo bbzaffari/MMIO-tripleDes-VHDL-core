@@ -13,6 +13,9 @@ The driver enables encryption and decryption of arbitrary-length messages via sy
 - **ECB (Electronic Codebook)**
 - **CBC (Cipher Block Chaining)**
 - **CTR (Counter Mode)**
+
+## Documentation
+For detailed electrical characteristics, communication protocols, and performance specifications, refer to the official
   
 ## Table of Contents
 - [Objective overview of this work](#objective-overview-of-this-work)
