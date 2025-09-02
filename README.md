@@ -48,6 +48,7 @@ The validation process was carried out using the hexdump function, which display
 The output (stdout) is saved in the [`debug.txt`](https://github.com/bbzaffari/minimal-HF-RISC-V/blob/6a5041a4e47189d85cda550ba80e718dcd1fe7e8/sim/rv32e_basic/debug.txt) file, accessible from this location.
 
 ---
+---
 
 
 # 🧩 Bidirectional hardware-software interface for cryptographic peripherals 
@@ -204,14 +205,14 @@ The macros in this file represent physical register addresses, casted as `volati
 ````
 
 
-
+---
 ---
 
 # ⚙ Implementation Details and MMIO Access in the RTOS
 ![Explanation incoming](https://img.shields.io/badge/Explanation_incoming-blue?style=for-the-badge&logo=gitbook)
 
 
-
+---
 ---
 # How to Set Up the Environment
 - **In three steps:** ***`Clone -> Docker Setup-> Starting the container`***
@@ -272,7 +273,7 @@ docker run -it --name SE -v "$PWD":/home ghcr.io/sjohann81/linux-es
 
 
 
----
+
 ## 3rd — Starting/accessing the container 
 **Accessing the Graphical Interface — *I do not recommend*** ❌
 > By default, the container launches a lightweight graphical environment, which can be accessed via your browser at:
