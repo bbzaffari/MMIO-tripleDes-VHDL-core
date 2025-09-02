@@ -235,8 +235,6 @@ The macros in this file represent physical register addresses, casted as `volati
 git clone --recurse https://github.com/bbzaffari/MMIO-tripleDes-VHDL-core
 ````
 
----
-
 ## 2nd Docker Setup
 
 For the purposes of this class, the professor provided a pre-configured Docker environment that includes all the necessary dependencies for the system to run properly.
