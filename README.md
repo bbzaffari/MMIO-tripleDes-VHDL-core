@@ -214,7 +214,7 @@ The macros in this file represent physical register addresses, casted as `volati
 ### What is MMIO?
 **MMIO (Memory-Mapped I/O)** is a technique where **hardware devices are controlled using memory addresses**.
 
-Instead of using special I/O instructions, the CPU communicates with hardware (like sensors, LEDs, or crypto blocks) by **reading from and writing to specific memory addresses**. These addresses don’t point to RAM — they point to device registers.
+Instead of using special I/O instructions, the CPU communicates with hardware (like PCIe devices) by **reading from and writing to specific memory addresses**. These addresses don’t point to RAM — they point to device registers.
 
 **How it works:**
 
