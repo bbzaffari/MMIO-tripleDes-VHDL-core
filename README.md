@@ -235,7 +235,9 @@ Instead of using special I/O instructions, the CPU communicates with hardware (l
   * Usually accessed via `volatile` pointers in C/C++
 
 This makes the CPU act like it’s writing to memory — but it’s actually sending a signal to a hardware device.
+
 )
+
 ---
 ---
 # How to Set Up the Environment
