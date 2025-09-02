@@ -25,7 +25,6 @@ The system includes padding (PKCS#7), task ID management, and validation using r
 - [Important files](#important-files)
 - [Validation](#validation)
 - [Bidirectional hardware-software interface for cryptographic peripherals](#bidirectional-hardware-software-interface-for-cryptographic-peripherals)
-- [Implementation Details and MMIO Access in the UCX-OS](#implementation-details-and-mmio-access-in-the-uKernel-OS)
 - [How to Set Up the Environment](#how-to-set-up-the-environment)
 - [How to run](#how-to-run)
 
@@ -207,13 +206,8 @@ The macros in this file represent physical register addresses, casted as `volati
 
 ````
 
-
----
----
-
-# ⚙ Implementation Details and MMIO Access in the uKernel-OS
-
-***See [`🔗🔗🔗🔗🔗UCX README`](https://github.com/bbzaffari/ucx-os-minimo) for complete details — omitted here for clarity***
+> *Implementation Details and MMIO Access in the uKernel-OS*:
+> ***See [`🔗🔗🔗🔗🔗UCX README`](https://github.com/bbzaffari/ucx-os-minimo) for complete details — omitted here for clarity***
 
 
 ---
