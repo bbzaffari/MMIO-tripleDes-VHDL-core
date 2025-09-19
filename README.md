@@ -17,7 +17,7 @@ The driver enables encryption and decryption of arbitrary-length messages via sy
 
 The system includes: PKCS#7 padding; Task ID management; Validation using real text data. 
 
-For a detailed explanation of attack detection logic, experimental setup, and results, please refer to the 🔗[**full technical report***](/Report.pdf)
+For a detailed explanation of the logic, experimental setup, and results, please refer to the 🔗[**full technical report***](/Report.pdf)
 
 ## Documentation
 > For detailed electrical characteristics, communication protocols, and performance specifications, refer to the [***official datasheet***](/docs/3DESDatasheet_CoreTex_OpenCores.pdf)
