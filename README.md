@@ -288,7 +288,7 @@ docker run -it --name SE -v "$PWD":/home ghcr.io/sjohann81/linux-es
 * **`--name SE***`**: Names the container `SE`, which helps you reference it easily later.
 * **`-v "$PWD":/home`**: Mounts your current working directory (from your host machine) into the container at the path `/home`.
 
-> **Notes**:
+> [!WARNING]\
 > - ***1. After the first run, do not repeat the docker run command, or you'll create duplicate containers.***
 >    * 1. This can lead to:
 >    * 2. Confusion (multiple containers with similar configurations)
@@ -304,6 +304,7 @@ docker run -it --name SE -v "$PWD":/home ghcr.io/sjohann81/linux-es
 
 ## 3rd — Starting/accessing the container 
 **Accessing the Graphical Interface — *I do not recommend*** ❌
+> [!NOTE]\
 > By default, the container launches a lightweight graphical environment, which can be accessed via your browser at:
 >  **[http://localhost:8080](http://localhost:8080)** 
 > This interface provides a minimal desktop environment running inside the container.
