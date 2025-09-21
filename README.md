@@ -214,7 +214,6 @@ The macros in this file represent physical register addresses, casted as `volati
 > ***See [`🔗🔗🔗🔗🔗UCX README`](https://github.com/bbzaffari/ucx-os-minimo) for complete details — omitted here for clarity***
 
 
-(
 ### What is MMIO?
 **MMIO (Memory-Mapped I/O)** is a technique where **hardware devices are controlled using memory addresses**.
 
@@ -240,7 +239,6 @@ Instead of using special I/O instructions, the CPU communicates with hardware (l
 
 This makes the CPU act like it’s writing to memory — but it’s actually sending a signal to a hardware device.
 
-)
 
 ---
 ---
@@ -334,6 +332,7 @@ This command **attaches a terminal to the running container**, allowing you to i
 * `SE`: Refers to the container you started.
 * `bash`: Launches the Bash shell inside the container.
 
+> [!NOTE]\
 > - Use `start + exec` every time you want to return to the container after rebooting or closing Docker — **never `docker run` again** for this purpose.
 > - Together, these two commands will bring you **back into your development environment** inside the container — ready to compile, run, and edit your project files that were mounted in `/home`.
 
