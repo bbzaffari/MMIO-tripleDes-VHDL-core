@@ -332,7 +332,7 @@ This command **attaches a terminal to the running container**, allowing you to i
 * `SE`: Refers to the container you started.
 * `bash`: Launches the Bash shell inside the container.
 
-> [!NOTE]\
+> [!NOTE]
 > - Use `start + exec` every time you want to return to the container after rebooting or closing Docker — **never `docker run` again** for this purpose.
 > - Together, these two commands will bring you **back into your development environment** inside the container — ready to compile, run, and edit your project files that were mounted in `/home`.
 
