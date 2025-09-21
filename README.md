@@ -209,7 +209,7 @@ The macros in this file represent physical register addresses, casted as `volati
 
 ````
 
-> [!IMPORTANT]
+> [!IMPORTANT]\
 > *Implementation Details and MMIO Access in the uKernel-OS*: \
 > ***See [`🔗🔗🔗🔗🔗UCX README`](https://github.com/bbzaffari/ucx-os-minimo) for complete details — omitted here for clarity***
 
